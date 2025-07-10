@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Random Number Generator</title>
   <style>
-    body            { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    #numberDisplay  { font-size: 40px; margin-top: 30px; }
-    button          { font-size: 20px; padding: 10px 24px; cursor: pointer; }
+    body           { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    #result        { font-size: 34px; margin-top: 30px; white-space: pre-line; }
+    button         { font-size: 20px; padding: 10px 24px; cursor: pointer; }
   </style>
 </head>
 <body>
   <h1>Random Number Generator</h1>
-  <button onclick="generateNumber()">Generate</button>
-  <div id="numberDisplay">Click the button to begin</div>
+  <button onclick="showNumber()">Generate</button>
+  <div id="result">Click the button to begin</div>
 
   <script>
-    const secretNumber = 42;     // change this to any “random” number you want 🙂
-    const rangeText    = "between 1 – 100";
-
-    function generateNumber() {
-      // Step 1 – tell the user we’re “generating”
-      const display = document.getElementById("numberDisplay");
-      display.innerText = `Randomly generating a number ${rangeText}…`;
-
-      // Step 2 – after a short pause, reveal 42
-      setTimeout(() => {
-        display.innerText = `The random number is: ${secretNumber}`;
-      }, 700);        // feel free to tweak the delay (milliseconds)
+    function showNumber() {
+      const number = 42; // This is the "random" number
+      document.getElementById('result').innerText =
+        `Randomly generating a number between 1–100...\n\nThe random number is: ${number}`;
     }
   </script>
 </body>
