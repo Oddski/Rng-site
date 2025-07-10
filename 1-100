@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Generator</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; }
+    #numberDisplay { font-size: 40px; margin-top: 20px; }
+    button { font-size: 20px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Random Number Generator</h1>
+  <button onclick="generateRandomNumber()">Generate</button>
+  <div id="numberDisplay">Click the button!</div>
+
+  <script>
+    const secretNumber = 42;
+    function generateRandomNumber() {
+      const fake = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("numberDisplay").innerText = `The random number is: ${fake}`;
+      setTimeout(() => {
+        document.getElementById("numberDisplay").innerText = `The secret number is: ${secretNumber}`;
+      }, 600);
+    }
+  </script>
+</body>
+</html>
